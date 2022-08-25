@@ -1,4 +1,4 @@
-# petClinicApp
+# SpringSimpleApp
 # Spring boot
 # Hibernate
 # Jpa
