@@ -30,7 +30,7 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println(" Bootstrap in Yunus Emre ");
 
         Puhlisher puhlisher = new Puhlisher();
-        puhlisher.setName("SFG Puhlisher");
+        puhlisher.setName("Çiçek yayın");
         puhlisher.setCity("Trabzon");
         puhlisher.setState("FL");
 
@@ -49,6 +49,18 @@ public class BootStrapData implements CommandLineRunner {
 
         authorRepository.save(eric);
         bookRepository.save(b);
+        puhlisherRepository.save(puhlisher);
+
+        Author rod = new Author("Yunus", "Öztürk");
+        Book noEJB = new Book("Kelebekler Gamsız Uçar", "3939459459");
+        rod.getBooks().add(noEJB);
+        noEJB.getAuthors().add(rod);
+
+        noEJB.setPuhlisher(puhlisher);
+        puhlisher.getBooks().add(noEJB);
+
+        authorRepository.save(rod);
+        bookRepository.save(noEJB);
         puhlisherRepository.save(puhlisher);
 
       System.out.println("Number of books: " + bookRepository.count());
