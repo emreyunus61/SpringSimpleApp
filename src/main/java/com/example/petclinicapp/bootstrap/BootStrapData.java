@@ -39,7 +39,7 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Puhlisher count: "+ puhlisherRepository.count());
 
 
-        Author eric = new Author("eric","kaya");
+        Author eric = new Author("Mansur","kaya");
         Book   b = new Book("Adam Oğlu adam", "6161" );
         eric.getBooks().add(b);
         b.getAuthors().add(eric);
